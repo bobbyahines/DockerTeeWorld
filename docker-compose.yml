@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+
+  tw:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bobbyahines/teeworld:server
+    container_name: tw
+    restart: unless-stopped
+    networks:
+      - tw_backend
+    ports:
+      - 8306:8306
+    command: ./teeworlds_srv -f server.cfg
+
+networks:
+  tw_backend:
