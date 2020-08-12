@@ -8,6 +8,7 @@ ENV $SERVER_MOTD sv_motd Example Message of the Day
 ENV $SERVER_PORT sv_port 8303
 ENV $SERVER_EXT_PORT sv_external_port 8303
 ENV $SERVER_RCON_PASS sv_rcon_password rcon_secret
+ENV $SERVER_MAP sv_map dm1
 
 # Update OS and add distribution upgrades
 RUN apt update && apt -y dist-upgrade
@@ -30,7 +31,7 @@ RUN echo $SERVER_PASS >> /srv/server.cfg
 RUN echo $SERVER_MOTD >> /srv/server.cfg
 RUN echo $SERVER_PORT >> /srv/server.cfg
 RUN echo $SERVER_EXT_PORT >> /srv/server.config
-RUN echo "sv_map dm1" >> /srv/server.cfg
+RUN echo $SERVER_MAP >> /srv/server.cfg
 RUN echo "sv_scorelimit 20" >> /srv/server.cfg
 RUN echo "sv_timelimit 10" >> /srv/server.cfg
 RUN echo "sv_gametype dm" >> /srv/server.cfg
