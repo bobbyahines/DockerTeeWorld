@@ -12,7 +12,7 @@ services:
     networks:
       - tw_backend
     ports:
-      - 8306:8306
+      - 8303:8303
     command: ./teeworlds_srv -f server.cfg
 
 networks:
